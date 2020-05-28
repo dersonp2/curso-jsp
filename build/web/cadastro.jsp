@@ -4,6 +4,7 @@
     Author     : Anderson
 --%>
 
+<%@page import="controller.ControllerAluno"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,14 +17,9 @@
             String nome = request.getParameter("nome");
             int idade = Integer.parseInt(request.getParameter("idade"));
             String curso = request.getParameter("curso");
-
-            String resultado ="";
             
-            if (idade > 50){
-            resultado = "Cuidado com o Corona";
-            }else{
-                resultado = "Você não é tão velho, mas cuidado com o Corona";
-            }
+            ControllerAluno ca = new ControllerAluno();
+            String retorno = ca.cadastarAluno(nome, idade, curso);
         %>
 
 
@@ -35,8 +31,8 @@
         <p>
             Nome: <%= nome%> <br/>
             Idade: <% out.print(idade);%> <br/>
-            Curso: <%= curso %> <br/>
-            <b>Resultado <%= resultado%> <b/>
+            Curso: <%= curso%> <br/>
+            <b>Resultado <%= retorno %> <b/>
         </p>
 
 
