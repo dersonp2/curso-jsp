@@ -18,7 +18,7 @@
         <%@include file="topo.jsp" %>
         <h2>Pagina Inicio 1</h2>
 
-        <form action="cadastro.jsp" method="post">
+        <form action="cadastro.jsp">
             <fieldset>
                 <legend>Dados do aluno</legend>
                 <p>

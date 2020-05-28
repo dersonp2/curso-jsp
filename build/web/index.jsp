@@ -17,84 +17,28 @@
     <body>
         <%@include file="topo.jsp" %>
         <h2>Pagina Inicio 1</h2>
+
+        <form action="cadastro.jsp" method="post">
+            <fieldset>
+                <legend>Dados do aluno</legend>
+                <p>
+                    <label>Nome: </label>
+                    <input type="text" id="nome" name="nome">
+                </p>
+                <p>
+                    <label>Idade: </label>
+                    <input type="number" id="idade" name="idade" min="0">
+                </p>
+                <p>
+                    <label>Curso: </label>
+                    <input type="text" id="curso" name="curso">
+                </p>
+                <input type="submit" value="Cadastrar aluno">
+            </fieldset>
+        </form>
+
+
         <a href="contato.jsp">ir para contato</a>
-
-        <%-- Método 
-           <%
-            int mes = 2;
-            String txt = infoMes(mes);
-            out.print(txt);
-
-            int result = 5 + 10 + 1;
-            out.print(result);
-            result = 50 + 30 + 1;
-            out.print(result);
-
-        %>
-          <%!
-            public int soma(int numA, int numB) {
-                int resultado = numA + numB + 1;
-                return resultado;
-            }
-        %>
-        <%!            public String infoMes(int valorRecebido) {
-                if (valorRecebido >= 6 && valorRecebido <= 12) {
-                    return "Passou da metade do ano";
-                } else if (valorRecebido < 1 || valorRecebido > 12) {
-                    return "Mes invalido";
-                } else {
-                    return "Ainda não chegamos na metade do ano";
-                }
-            }
-        %>
-        --%>
-
-        <%--
-       Hoje o dia é: 
-       <%
-           int dia = Integer.parseInt((new SimpleDateFormat("dd")).format(new Date()));
-           out.print("<b>" + dia + "</b>");
-           String msg;
-           if (dia > 15) {
-               msg = "<br> <br>Vish, ja passou da <b>metade do mês</b> e ainda nao voltou as aulas presenciais";
-           } else {
-               msg = "<br>Estamos antes da metade do mês, vamos ter fé";
-           }
-       %>
-       <%= msg%>
-        --%>
-
-        <%-- Usando if e else 
-        <%
-            int mes = Integer.parseInt((new SimpleDateFormat("M")).format(new Date()));
-            if (mes == 1) {
-                out.println("Janeiro");
-            } else if (mes == 02) {
-                out.println("Fevereiro");
-            } else if (mes == 05){
-            out.println("<br>Maio");
-            }
-        %>
-        --%>
-        <%-- Switch 
-        <%
-        int mes = 1;
-        switch(mes) {
-            case 1:
-                out.print("<br>Janeiro");
-                break;
-            case 2: 
-                out.print("Fevereiro");
-                break;
-            case 3:
-                out.print("Março");
-                break;
-            default:
-                out.print("<br> Mes inexistente");
-                break;
-        }
-        %>
-        --%>
         <%@include file="rodape.html" %>
     </body>
 </html>
